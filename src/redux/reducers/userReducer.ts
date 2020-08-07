@@ -8,7 +8,10 @@ const initialState: UserInfo = {
   emailVerified: false,
   displayName: null,
 };
-export default function rootReducer(state = initialState, action: UserActions): UserInfo {
+export default function rootReducer(
+  state = initialState,
+  action: UserActions
+): UserInfo {
   switch (action.type) {
     case USER_LOGIN: {
       const { uid, email, emailVerified, displayName } = action.payload;

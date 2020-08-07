@@ -32,5 +32,5 @@
       "@typings/*": ["src/typings/*"]
     }
   },
-  "exclude": ["node_modules", "public", ".cache"]
+  "exclude": ["node_modules", "public", ".cache", "dist"]
 }
