@@ -1,10 +1,5 @@
-import React from "react";
-import Container from "@components/Container";
+import React, { useState } from "react";
 
 export default function Home(): JSX.Element {
-  return (
-    <Container>
-      <h1>About Container Modules</h1>
-    </Container>
-  );
+  return <div></div>;
 }

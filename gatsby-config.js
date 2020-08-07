@@ -1,3 +1,7 @@
 module.exports = {
-  plugins: [`gatsby-plugin-emotion`, `gatsby-plugin-typescript`],
+  plugins: [
+    `gatsby-plugin-css-modules-typings`,
+    `gatsby-plugin-chakra-ui`,
+    `gatsby-plugin-typescript`,
+  ],
 };

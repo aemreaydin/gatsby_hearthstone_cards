@@ -28,7 +28,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@redux/*": ["src/redux/*"],
-      "@firebase/*": ["src/firebase/*"],
+      "@gFirebase/*": ["src/gFirebase/*"],
       "@typings/*": ["src/typings/*"]
     }
   },
