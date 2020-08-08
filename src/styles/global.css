@@ -1,0 +1,3 @@
+div[role="group"][tabindex] {
+  flex: 1;
+}

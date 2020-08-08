@@ -36,6 +36,5 @@ class FirebaseAuth {
     return this.auth.currentUser?.updatePassword(password);
   }
 }
-console.log(firebaseConfig);
-const fbAuth = new FirebaseAuth();
-export default fbAuth;
+
+export default new FirebaseAuth();

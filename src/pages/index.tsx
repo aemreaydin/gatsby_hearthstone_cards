@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import Layout from "@components/Layout/Layout";
 
 export default function Home(): JSX.Element {
-  return <div></div>;
+  return (
+    <Layout>
+      <h1>Hello</h1>
+    </Layout>
+  );
 }

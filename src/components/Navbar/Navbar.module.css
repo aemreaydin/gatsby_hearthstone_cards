@@ -1,0 +1,19 @@
+.container {
+  height: 3rem;
+  background-color: gold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.nav > a {
+  padding: 0.8rem;
+  /* height: 100%; */
+}
+.nav > a:hover {
+  background-color: goldenrod;
+}
+.nav > a:not(:last-child) {
+  margin-right: 2rem;
+}
