@@ -1,0 +1,12 @@
+.formContainer {
+  width: 30vw;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formContainer > *:not(:last-child) {
+  margin-bottom: 1rem;
+}

@@ -1,6 +1,5 @@
-import React, { ReactElement } from "react";
+import React, { useEffect } from "react";
 import { RouteComponentProps } from "@reach/router";
-import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import {
   FormControl,
@@ -10,54 +9,37 @@ import {
   Icon,
   Input,
   Button,
+  useToast,
 } from "@chakra-ui/core";
-import FirebaseAuth from "@gFirebase/firebaseAuth";
 import * as styles from "./Login.module.css";
-import { AppDispatch } from "@redux/actions";
-import { USER_LOGIN } from "@redux/actions/userActions";
-import { navigate } from "gatsby";
-import isFirebaseError from "@gFirebase/firebaseHelpers";
-import { LOCAL_STORAGE_KEY, setUser } from "@gFirebase/authHelpers";
-import { UserInfo } from "@typings/user";
+import { useEmailPasswordAuth } from "@hooks/useAuth";
 
 type FormData = {
   email: string;
   password: string;
 };
 
-export default function LoginPage(props: RouteComponentProps): ReactElement {
-  const { register, handleSubmit } = useForm<FormData>();
-  const dispatch = useDispatch<AppDispatch>();
+const Login: React.FC<RouteComponentProps> = () => {
+  const { register, handleSubmit, errors } = useForm<FormData>();
+  const [handleLogin, error, setError] = useEmailPasswordAuth();
+  const toast = useToast();
 
   const onSubmit = handleSubmit(({ email, password }) => {
-    console.log(email, password);
-    FirebaseAuth.SignInWithEmailAndPassword(email, password)
-      .then((userCredentials) => {
-        console.log({ userCredentials });
-        const { user } = userCredentials;
-        if (user) {
-          const payload: UserInfo = {
-            displayName: user.displayName,
-            email: user.email,
-            emailVerified: user.emailVerified,
-            uid: user.uid,
-          };
-          dispatch({
-            type: USER_LOGIN,
-            payload,
-          });
-          setUser(payload);
-        }
-        navigate("/app/profile");
-      })
-      .catch((error) => {
-        if (isFirebaseError(error)) {
-          console.log("Firebase Error");
-        } else {
-          throw new Error("Something unexpected happened.");
-        }
-      });
+    handleLogin(email, password);
   });
+
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: "An error occured.",
+        description: "Wrong email or password",
+        status: "error",
+        isClosable: true,
+        duration: 5000,
+      });
+      setError("");
+    }
+  }, [toast, setError, error]);
 
   return (
     <form className={styles.formContainer} onSubmit={onSubmit}>
@@ -96,4 +78,5 @@ export default function LoginPage(props: RouteComponentProps): ReactElement {
       </Button>
     </form>
   );
-}
+};
+export default Login;

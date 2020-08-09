@@ -29,7 +29,8 @@
       "@components/*": ["src/components/*"],
       "@redux/*": ["src/redux/*"],
       "@gFirebase/*": ["src/gFirebase/*"],
-      "@typings/*": ["src/typings/*"]
+      "@typings/*": ["src/typings/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
   "exclude": ["node_modules", "public", ".cache", "dist"]

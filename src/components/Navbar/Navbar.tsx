@@ -14,9 +14,13 @@ function LoggedIn(): ReactElement {
     </>
   );
 }
-
 function LoggedOut(): ReactElement {
-  return <Link to="/app/login">Login</Link>;
+  return (
+    <>
+      <Link to="/app/login">Login</Link>
+      <Link to="/app/register">Register</Link>
+    </>
+  );
 }
 
 export default function Navbar(): JSX.Element {

@@ -19,6 +19,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "@redux": path.resolve(__dirname, "src/redux"),
         "@gFirebase": path.resolve(__dirname, "src/gFirebase"),
         "@typings": path.resolve(__dirname, "src/typings"),
+        "@hooks": path.resolve(__dirname, "src/hooks"),
       },
     },
   });
