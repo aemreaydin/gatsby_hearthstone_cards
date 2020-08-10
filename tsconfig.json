@@ -30,8 +30,9 @@
       "@redux/*": ["src/redux/*"],
       "@gFirebase/*": ["src/gFirebase/*"],
       "@typings/*": ["src/typings/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@api/*": ["src/api/*"]
     }
   },
-  "exclude": ["node_modules", "public", ".cache", "dist"]
+  "exclude": ["./node_modules", "public", ".cache", "dist"]
 }

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import Navbar from "@components/Navbar/Navbar";
-import * as styles from "./Layout.module.css";
+import * as styles from "./Layout.module.scss";
 
 type Props = {
   className?: string;

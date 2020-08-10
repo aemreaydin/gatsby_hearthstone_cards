@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Container from "@components/Container";
+import React from "react";
+import Layout from "@components/Layout/Layout";
 export default function Home() {
-  const [, setName] = useState("");
-  useEffect(() => {
-    setName("Emre");
-  }, [setName]);
   return (
-    <Container>
-      <h1>About Container Modules</h1>
-    </Container>
+    <Layout>
+      <h1>Hello</h1>
+    </Layout>
   );
 }

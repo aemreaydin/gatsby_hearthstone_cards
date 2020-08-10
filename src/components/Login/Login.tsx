@@ -11,7 +11,7 @@ import {
   Button,
   useToast,
 } from "@chakra-ui/core";
-import * as styles from "./Login.module.css";
+import * as styles from "./Login.module.scss";
 import { useEmailPasswordAuth } from "@hooks/useAuth";
 
 type FormData = {
@@ -20,7 +20,7 @@ type FormData = {
 };
 
 const Login: React.FC<RouteComponentProps> = () => {
-  const { register, handleSubmit, errors } = useForm<FormData>();
+  const { register, handleSubmit } = useForm<FormData>();
   const [handleLogin, error, setError] = useEmailPasswordAuth();
   const toast = useToast();
 

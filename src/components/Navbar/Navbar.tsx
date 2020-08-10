@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { Link } from "gatsby";
 
-import * as styles from "./Navbar.module.css";
+import * as styles from "./Navbar.module.scss";
 import { isLoggedIn, logOut } from "@gFirebase/authHelpers";
 
 function LoggedIn(): ReactElement {

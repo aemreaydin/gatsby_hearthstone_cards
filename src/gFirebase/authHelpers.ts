@@ -22,7 +22,6 @@ export function getUser(): UserInfo | null {
 
 export function isLoggedIn(): boolean {
   const user = getUser();
-  if (user) console.log(user);
   return !!user;
 }
 

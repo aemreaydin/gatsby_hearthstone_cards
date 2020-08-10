@@ -10,7 +10,7 @@ import {
   Input,
   Button,
 } from "@chakra-ui/core";
-import * as styles from "./Register.module.css";
+import * as styles from "./Register.module.scss";
 import firebaseAuth from "@gFirebase/firebaseAuth";
 import { navigate } from "gatsby";
 import { setUser } from "@gFirebase/authHelpers";
@@ -25,7 +25,7 @@ type FormData = {
 const Register: React.FC<RouteComponentProps> = () => {
   const { register, handleSubmit } = useForm<FormData>();
 
-  const onSubmit = handleSubmit(({ email, password, userName }) => {
+  const onSubmit = handleSubmit(({ email, password }) => {
     firebaseAuth
       .CreateUserWithEmailAndPassword(email, password)
       .then(({ user: firebaseUser }) => {
@@ -44,7 +44,7 @@ const Register: React.FC<RouteComponentProps> = () => {
 
   return (
     <form className={styles.formContainer} onSubmit={onSubmit}>
-      <FormControl isRequired className={styles.formControl}>
+      <FormControl isRequired>
         <FormLabel htmlFor="userName">User Name</FormLabel>
         <InputGroup>
           <InputLeftElement>
@@ -59,7 +59,7 @@ const Register: React.FC<RouteComponentProps> = () => {
           />
         </InputGroup>
       </FormControl>
-      <FormControl isRequired className={styles.formControl}>
+      <FormControl isRequired>
         <FormLabel htmlFor="email">Email</FormLabel>
         <InputGroup>
           <InputLeftElement>
