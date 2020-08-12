@@ -1,11 +1,13 @@
 import { useState } from "react";
 import FirebaseAuth from "@gFirebase/firebaseAuth";
+import FirebaseStore from "@gFirebase/firebaseStore";
 import isFirebaseError from "@gFirebase/firebaseHelpers";
 import { UserInfo } from "@typings/user";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@redux/actions";
 import { USER_LOGIN } from "@redux/actions/userActions";
 import { navigate } from "gatsby";
+import { userInfo } from "os";
 
 export function useEmailPasswordAuth(): [
   (email: string, password: string) => void,
@@ -29,6 +31,10 @@ export function useEmailPasswordAuth(): [
           dispatch({
             type: USER_LOGIN,
             payload,
+          });
+          // handleInitialUserInfo
+          FirebaseStore.getData().then((value) => {
+            dispatch({ type: "UPDATE_MANA", payload: value as Mana });
           });
         }
         navigate("/app/profile");

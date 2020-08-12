@@ -1,15 +1,14 @@
-import React, { ReactElement } from "react";
-import styles from "./ManaButton.module.scss";
-import { Mana } from "@typings/hearthstone";
+import styled from "styled-components";
 
-type Props = {
-  mana: Mana;
-  onClick: (e: React.MouseEvent) => void;
+type ManaButtonProps = {
+  active: boolean;
 };
-export default function ManaButton({ mana, onClick }: Props): ReactElement {
-  return (
-    <button onClick={onClick} className={styles.button}>
-      {mana}
-    </button>
-  );
-}
+const ManaButton = styled.button<ManaButtonProps>`
+  background-color: ${(props) => (props.active ? "green" : "blue")};
+  color: whitesmoke;
+  padding: 1rem;
+  &:hover {
+    background-color: green;
+  }
+`;
+export default ManaButton;

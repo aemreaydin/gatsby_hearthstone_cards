@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import { useQuery } from "react-query";
 import Card from "@components/Hearthstone/Card/Card";
 import HSAPI from "@api/hearthstoneApi";

@@ -30,6 +30,7 @@
     "emotion-theming": "^10.0.27",
     "eslint-plugin-import": "^2.22.0",
     "firebase": "^7.17.2",
+    "firebase-admin": "^9.0.0",
     "gatsby": "^2.24.26",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-chakra-ui": "^0.1.4",
@@ -45,6 +46,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "simple-oauth2": "^4.1.0",
+    "styled-components": "^5.1.1",
     "surge": "^0.21.6"
   },
   "devDependencies": {

@@ -6,4 +6,5 @@ export default {
   storageBucket: process.env.STORAGE_BUCKET,
   messagingSenderId: process.env.MESSAGING_SENDER,
   appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
 };

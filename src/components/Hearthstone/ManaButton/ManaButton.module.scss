@@ -3,3 +3,8 @@
   color: whitesmoke;
   padding: 1rem;
 }
+.button:hover,
+.button:focus,
+.button:active {
+  background-color: green;
+}
